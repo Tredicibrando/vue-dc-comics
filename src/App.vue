@@ -4,6 +4,7 @@
     <MyJumbo />
     <MyCta />
     <MyFooter />
+    <MySocial />
   </div>
 </template>
 
@@ -12,6 +13,8 @@ import MyHeader from '@/components/MyHeader'
 import MyJumbo from '@/components/MyJumbo'
 import MyCta from '@/components/MyCta'
 import MyFooter from '@/components/MyFooter'
+import MySocial from '@/components/MySocial'
+import style from '@/components/style'
 
 export default {
   name: 'App',
@@ -20,6 +23,8 @@ export default {
     MyJumbo,
     MyCta,
     MyFooter,
+    MySocial,
+    style
   }
 }
 </script>
