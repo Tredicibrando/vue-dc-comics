@@ -1,16 +1,22 @@
 <template>
   <div id="app">
     <MyHeader />
+    <MyJumbo />
+    <MyCta />
   </div>
 </template>
 
 <script>
 import MyHeader from '@/components/MyHeader'
+import MyJumbo from '@/components/MyJumbo'
+import MyCta from '@/components/MyCta'
 
 export default {
   name: 'App',
   components: {
-    MyHeader
+    MyHeader,
+    MyJumbo,
+    MyCta,
   }
 }
 </script>
@@ -22,7 +28,7 @@ export default {
   box-sizing: border-box;
 }
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'PT Sans Narrow', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

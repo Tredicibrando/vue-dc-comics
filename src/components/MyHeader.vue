@@ -6,10 +6,10 @@
             </figure>
             <div class="navbar">
                 <ul class="navbar__list">
-                    <li class="navbar__item">
-                        <a href="#">Characters</a>
+                    <li v-for="(link,i) in links" :key="i" class="navbar__item">
+                        <a href="link.href">{{link.text}}</a>
                     </li>
-                    <li class="navbar__item">
+                    <!-- <li class="navbar__item">
                         <a href="#">Comics</a>
                     </li>
                     <li class="navbar__item">
@@ -35,7 +35,7 @@
                     </li>
                     <li class="navbar__item">
                         <a href="#">Shop</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </header>
@@ -44,33 +44,90 @@
 
 <script>
     export default {
-        name: 'MyHeader'
+        name: 'MyHeader',
+        data() {
+            return{
+                links: [
+                    {
+                        text: 'Characters',
+                        href: '#',
+                    },
+                    {
+                        text: 'Comics',
+                        href: '#',
+                    },
+                    {
+                        text: 'Movies',
+                        href: '#',
+                    },
+                    {
+                        text: 'Tv',
+                        href: '#',
+                    },
+                    {
+                        text: 'Games',
+                        href: '#',
+                    },
+                    {
+                        text: 'Collectibles',
+                        href: '#',
+                    },
+                    {
+                        text: 'Videos',
+                        href: '#',
+                    },
+                    {
+                        text: 'Fans',
+                        href: '#',
+                    },
+                    {
+                        text: 'News',
+                        href: '#',
+                    },
+                    {
+                        text: 'Shop',
+                        href: '#',
+                    },
+                ]
+            }
+
+        }
+
     }
+
+
 </script>
 
 <style lang="scss" scoped>
 
+$blue: #0282F9;
+
 .container{
-    width: 1420px;
+    max-width: 1600px;
     margin: 0 auto;
 
     .main_header{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 10px;
         background-color: white;
+        flex-wrap: wrap;
 
 
 
         .logo{
-        max-width: 100px;
-    }
+        width: max-content;
+        padding: 10px;
 
-    .navbar{
+        img{
+            max-width: 75px;
+            display: block;
+        }
+        }
+
+        .navbar{
         display: flex;
         align-items: center;
-        padding: 10px 0;
 
         .navbar__list{
             display: contents;
@@ -79,17 +136,34 @@
 
         .navbar__item{
             text-transform: uppercase;
-            padding: 5px;
+            padding: 5px 15px;
 
             a{
                 color: currentColor;
                 text-decoration: none;
+                font-weight: 400;
+                position: relative;
+
+                &:active,&:hover{
+                    color: $blue;
+                }
+
+                &:hover::after{
+                    position: absolute;
+                    display: block;
+                    content: '';
+                    width: 100%;
+                    height: 2px;
+                    background-color: $blue;
+                    top: 100%;
+
+                }
             }
         }
     }
     }
-    
-    
+
+
 }
 
 
