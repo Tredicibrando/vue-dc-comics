@@ -3,14 +3,14 @@
         <div class="container">
             <div class="cta__wrapper">
                 <ul class="cta__list">
-                    <li class="cta__item">
+                    <li v-for="(item, i) in items" :key="i" class="cta__item">
                         <figure>
-                            <img src="../assets/img/buy-comics-digital-comics.png" alt="">
+                            <img v-bind:src="item.image" alt="">
                         </figure>
-                        <h4 class="cta__text">Digital Comics</h4>
+                        <h4 class="cta__text">{{item.text}}</h4>
                     </li>
 
-                    <li class="cta__item">
+                    <!-- <li class="cta__item">
                         <figure>
                             <img src="../assets/img/buy-comics-merchandise.png" alt="">
                         </figure>
@@ -36,7 +36,7 @@
                             <img src="../assets/img/buy-dc-power-visa.svg" alt="">
                         </figure>
                         <h4 class="cta__text">DC power visa</h4>
-                    </li>
+                    </li> -->
                     
                 </ul>
             </div>
@@ -50,7 +50,28 @@
 
         data(){
             return{
-
+                items:[
+                    {
+                        image: require('../assets/img/buy-comics-digital-comics.png'),
+                        text: 'Digital Comics',
+                    },
+                    {
+                        image: require('../assets/img/buy-comics-merchandise.png'),
+                        text: 'DC Merchandise',
+                    },
+                    {
+                        image: require('../assets/img/buy-comics-subscriptions.png'),
+                        text: 'Subscription',
+                    },
+                    {
+                        image: require('../assets/img/buy-comics-shop-locator.png'),
+                        text: 'Comic shop locator',
+                    },
+                    {
+                        image: require('../assets/img/buy-dc-power-visa.svg'),
+                        text: 'DC power visa',
+                    },
+                ],
             }
         }
     }
@@ -89,7 +110,7 @@ $blue: #0282F9;
                             width: max-content;
 
                             img{
-                                width: 45px;
+                                height: 45px;
                             }
                         }
 
@@ -98,6 +119,7 @@ $blue: #0282F9;
                             font-family: 'Open Sans', sans-serif;
                             text-transform: uppercase;
                             font-weight: 300;
+                            font-size: 14px;
                         }
 
                     }
