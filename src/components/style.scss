@@ -1,0 +1,4 @@
+@mixin bluegradient{
+    background: rgb(0,69,133);
+    background: linear-gradient(90deg, rgba(0,69,133,1) 0%, rgba(2,132,249,1) 100%);
+}
