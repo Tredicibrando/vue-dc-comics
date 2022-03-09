@@ -112,6 +112,7 @@ $blue: #0282F9;
         align-items: center;
         background-color: white;
         flex-wrap: wrap;
+        height: 100px;
 
 
 
@@ -128,36 +129,45 @@ $blue: #0282F9;
         .navbar{
         display: flex;
         align-items: center;
+        justify-content: center;
+        height: 100%;
+        gap: 15px;
 
         .navbar__list{
             display: contents;
             list-style: none;
+            height: 100%;
         }
 
         .navbar__item{
             text-transform: uppercase;
-            padding: 5px 15px;
+            height: 100%;
+            display: flex;
+            position: relative;
+
+                &:hover::after{
+                    position: absolute;
+                    display: block;
+                    content: '';
+                    height: 3px;
+                    background-color: $blue;
+                    top: 97%;
+                    right: 0;
+                    left: 0;
+                }
 
             a{
                 color: currentColor;
                 text-decoration: none;
                 font-weight: 400;
                 position: relative;
+                align-self: center;
 
                 &:active,&:hover{
                     color: $blue;
                 }
 
-                &:hover::after{
-                    position: absolute;
-                    display: block;
-                    content: '';
-                    width: 100%;
-                    height: 2px;
-                    background-color: $blue;
-                    top: 100%;
-
-                }
+                
             }
         }
     }
